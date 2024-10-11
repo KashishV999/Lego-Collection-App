@@ -1,3 +1,19 @@
+/********************************************************************************
+* WEB322 – Assignment 03
+*
+* I declare that this assignment is my own work in accordance with Seneca's
+* Academic Integrity Policy:
+*
+* https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
+*
+* Name: _____Kahsish Verma_________________ Student ID: ____151579232__________ Date: _____11 october 2024_________
+*
+* Published URL: _________________https://web322-8jom-pd15kw8ll-kashishv999s-projects.vercel.app__________________________________________
+*
+********************************************************************************/
+
+
+
 const express = require('express'); 
 const legoData = require("./modules/legoSets");
 const path = require('path');
