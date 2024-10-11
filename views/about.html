@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>About</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar bg-base-100">
+        <div class="flex-1">
+            <a href="/" class="btn btn-ghost normal-case text-3xl font-bold">Lego Collection</a>
+        </div>
+        <div class="navbar-center hidden sm:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="/">Home</a></li>
+                <li><a class="active" href="/about">About</a></li> 
+                <li>
+                    <details>
+                        <summary>Theme</summary>
+                        <ul class="p-2 bg-base-100 right-0">
+                            <li><a href="/lego/sets?theme=competition">Competition</a></li>
+                            <li><a href="/lego/sets?theme=expert-builder">Expert Builder</a></li>
+                            <li><a href="/lego/sets?theme=star-wars">Star Wars</a></li>
+                        </ul>
+                    </details>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto mt-12">
+        <!-- Hero Section -->
+        <div class="hero bg-base-200">
+            <div class="hero-content text-center">
+                <div class="max-w-md">
+                    <h1 class="text-5xl font-bold">About</h1>
+                    <p class="py-6">Learn more about me and my journey.</p>
+                </div>
+            </div>
+        </div>
+
+      
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+            <!-- Left Column (Image) -->
+            <div class="flex justify-center">
+                <img class="w-48 rounded-lg" src="https://www.elifnotes.com/wp-content/uploads/2021/03/benefits-of-reading-fiction.webp" alt="Hiking in nature" />
+            </div>
+
+            <!-- Right Column (Blurb) -->
+            <div class="p-6">
+                <h2 class="text-2xl font-bold">A Little About Me</h2>
+                <p class="mt-4 text-gray-700 leading-relaxed">
+                    Hi, I'm passionate about coding, design, and creativity. Currently, I am taking courses in web development and programming.
+                    Outside of studies, I enjoy reading books, painting, and experimenting with new tech. Always eager to learn and grow in both personal 
+                    and professional spaces!
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

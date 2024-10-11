@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>404 - Page Not Found</title> 
+</head>
+
+<body>
+    <header>
+        <!-- Navbar -->
+        <div class="navbar bg-base-100">
+            <div class="flex-1">
+                <a href="/" class="btn btn-ghost normal-case text-8xl">Lego Collection</a>
+            </div>
+            <div class="navbar-center hidden sm:flex">
+                <ul class="menu menu-horizontal px-1">
+                    <li><a href="/about">About</a></li> 
+                    <li>
+                        <details>
+                            <summary>Theme</summary>
+                            <div class="dropdown">
+                                <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                                    <li><a href="/lego/sets?theme=competition">Competition</a></li>
+                                    <li><a href="/lego/sets?theme=expert-builder">Expert Builder</a></li>
+                                    <li><a href="/lego/sets?theme=star-wars">Star Wars</a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container mx-auto">
+            <!-- Hero Section for 404 Page -->
+            <div class="hero min-h-screen bg-base-200">
+                <div class="hero-content text-center">
+                    <div class="max-w-md">
+                        <h1 class="text-6xl font-bold">404</h1> 
+                        <p class="py-6">Oops! The page you're looking for doesn't exist.</p>
+                        <img src="https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif" alt="404 Image" class="mx-auto rounded-lg"> <!-- Sample Image -->
+                        <div class="mt-6">
+                            <a href="/" class="btn btn-primary">Go Home</a> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

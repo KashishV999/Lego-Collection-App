@@ -1,0 +1,23 @@
+{
+  "name": "assignment_2",
+  "version": "1.0.0",
+  "description": "assignment_web_322",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+   "tw:build": "npx tailwindcss -i ./public/css/tailwind.css -o ./public/css/main.css --watch"
+  },
+  "author": "Kashish Verma",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.15",
+    "daisyui": "^4.12.13",
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13"
+  }
+}

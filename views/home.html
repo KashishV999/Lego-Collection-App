@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css"> <!-- Reference to compiled Tailwind CSS -->
+    <title>Lego Collection</title> 
+
+<body>
+    <header>
+       
+    </header>
+    <main>
+
+        <div class="navbar bg-base-100">
+            <div class="flex-1">
+                <a href="/" class="btn btn-ghost normal-case text-8xl">Lego Collection</a> 
+            </div>
+
+            <div class="navbar-center hidden sm:flex">
+                <ul class="menu menu-horizontal px-1">
+                    <li><a href="/about">About</a></li> <!-- Link to About -->
+                    <li>
+                        <details>
+                            <summary>Theme</summary>
+                            <div class="dropdown">
+
+                                <ul tabindex="0"
+                                    class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                                    <li><a href="/lego/sets?theme=technic">Technic</a></li>
+                                    <li><a href="/lego/sets?theme=RoboRiders">RoboRiders</a></li>
+                                    <li><a href="/lego/sets?theme=Star">Star Wars</a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="container mx-auto">
+
+
+            <!-- Hero Section -->
+            <div class="hero bg-base-200 min-h-screen">
+                <div class="hero-content text-center">
+                    <div class="max-w-md">
+                        <h1 class="text-5xl font-bold">Explore the Lego Collection</h1>
+                        <p class="py-6">
+                            Discover a world of creativity and adventure with our exclusive Lego sets. Dive into the
+                            collection now!
+                        </p>
+                        <button class="btn btn-outline btn-primary">
+                            <a href="/lego/sets" class="btn btn-accent">Explore Now</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!----3 grid-->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!---1-->
+                <div class="bg-base-200 p-6 border border-gray-300 rounded">
+
+                    <div class="w-96 bg-base-100 shadow-xl border-2 border-gray-400 rounded-lg overflow-hidden">
+                        <figure>
+                            <img class="w-full" src="https://cdn.rebrickable.com/media/sets/1000591519-1.jpg" alt="Lego Set 1000591519-1" />
+                        </figure>
+                        <div class="card-body p-4">
+                            <h2 class="card-title text-xl font-bold">Star Wars: The Force Awakens - 3DS</h2>
+                            <p class="mt-4 text-gray-700">
+                                This Lego set, based on *Star Wars: The Force Awakens* for the 3DS, brings the iconic adventures to life.
+                                Whether you are a fan of the movie or the game, this set provides a thrilling building experience for Star Wars enthusiasts.
+                            </p>
+                            <div class="card-actions justify-end mt-4">
+                                <button class="btn btn-outline btn-primary">
+                                <a href="/lego/sets/1000591519-1" class="btn btn-primary">View Set</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure>
+                        <h2 class="card-title">Legend of Chima: Corbeaux et Gorilles</h2>
+                        <img class="w-full" src="https://cdn.rebrickable.com/media/sets/002253963-1.jpg"
+                            alt="Lego Set 002253963-1" />
+                    </figure>
+                    <div class="card-body">
+
+                        <p>This set from 1969 features a motorized building experience, providing hours of fun for
+                            builders of all ages.</p>
+                        <div class="card-actions justify-end">
+                            <button class="btn btn-outline btn-primary">
+                            <a href="/lego/sets/002253963-1" class="btn btn-primary">View Set</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure>
+                        <h2 class="card-title">Castle 2 for 1 Bonus Offer</h2>
+                        <img class="w-full" src="https://cdn.rebrickable.com/media/sets/0011-3.jpg"
+                            alt="Lego Set 0011-3" />
+                    </figure>
+                    <div class="card-body">
+
+                        <p>This set, known as the Basic Building Set, offers a variety of bricks for endless creative
+                            building possibilities.</p>
+                        <div class="card-actions justify-end">
+                            <button class="btn btn-outline btn-primary">
+                            <a href="/lego/sets/0011-3" class="btn btn-primary">View Set</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        </div>
+
+
+
+    </main>
+
+</body>
+
+</html>
