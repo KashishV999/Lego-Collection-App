@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lego Collection</title>
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <%- include('partials/navbar', { page: '/lego/sets' }) %>
+
+  <!-- Page Content -->
+  <div class="container mx-auto p-4">
+    <!-- Header -->
+    <div class="container mx-auto p-4">
+
+        <div class="hero bg-base-200 rounded-lg p-6">
+          <div class="hero-content text-center ">
+            <div class="max-w-md">
+              <h1 class="text-5xl font-bold">Collection</h1>
+    
+              <p class="py-6">Browse the entire collection.  Click the theme to filter by themes such as: <a href="/lego/sets?theme=Technic" class="btn btn-primary btn-xs">Technic</a> <a href="/lego/sets?theme=Lion Knights" class="btn btn-primary btn-xs">Lion Knights</a>  <a href="/lego/sets?theme=Books" class="btn btn-primary btn-xs">Books</a> </p>
+    
+            </div>
+          </div>
+        </div>
+    <br />
+
+    <!-- Table for Lego Sets -->
+    <div class="overflow-x-auto overflow-y-hidden">
+      <table class="table table-zebra w-full">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Name</th>
+         
+            <th>Year</th>
+            <th>Parts</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% sets.forEach(set => { %>
+          <tr>
+            <td>
+                <div class="avatar">
+                    <div
+                      class="w-32 h-32 rounded-lg bg-transparent bg-no-repeat bg-cover"
+                      style="background-image: url('<%= set.img_url %>'); background-size: cover;">
+                    </div>
+                  </div>
+              </td>
+              
+              <td>
+                <%= set.name %> | 
+                <a href="/lego/sets?theme=<%= encodeURIComponent(set.theme) %>" class="btn btn-xs btn-primary mt-2">
+                  <%= set.theme %>
+                </a>
+              </td>
+              
+
+            <td><%= set.name %></td>
+           
+            <td><%= set.year %></td>
+            <td><%= set.num_parts %></td>
+            <td>
+              <a href="/lego/sets/<%= set.set_num %>" class="btn btn-xs">details</a>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

@@ -6,13 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-   "tw:build": "npx tailwindcss -i ./public/css/tailwind.css -o ./public/css/main.css --watch"
+    "tw:build": "npx tailwindcss -i ./public/css/tailwind.css -o ./public/css/main.css --watch"
   },
   "author": "Kashish Verma",
   "license": "ISC",
   "dependencies": {
     "@tailwindcss/typography": "^0.5.15",
     "daisyui": "^4.12.13",
+    "ejs": "^3.1.10",
     "express": "^4.21.0"
   },
   "devDependencies": {

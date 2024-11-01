@@ -33,39 +33,33 @@ function initialize() {
     });
   }
   
-  //returns the complete "sets" array
   function getAllSets() {
     return new Promise((resolve, reject) => {
       if (sets.length > 0) {
-        resolve({
-          message: `${sets.length} sets found.`,
-          data: sets
-        });  // Resolve with message and data
+        resolve(sets); // Resolve with only the sets array
       } else {
-        reject("No sets found.");  // Reject with message
+        reject("No sets found.");
       }
     });
   }
+  
   
   
 // Return the "set" where "set_num" matches "setNum".
-  function getSetByNum(setNum) {
-    return new Promise((resolve, reject) => {
-      let matchingSet = sets.find(function (element3) {
-        return element3.set_num === setNum;
-      });
-  
-      if (matchingSet) {
-        resolve({
-          message: `Set with set number ${setNum} found.`,
-          data: matchingSet
-        });  // Resolve with message and data
-      } else {
-        reject(`not found.`);  // Reject with appropriate message
-      }
-    });
-  }
-  
+function getSetByNum(setNum) {
+
+  return new Promise((resolve, reject) => {
+    let foundSet = sets.find(s => s.set_num == setNum);
+
+    if (foundSet) {
+      resolve(foundSet)
+    } else {
+      reject("Unable to find requested set");
+    }
+
+  });
+
+}
   
 // Return sets where "theme" matches the "theme" parameter.
   function getSetsByTheme(theme) {
