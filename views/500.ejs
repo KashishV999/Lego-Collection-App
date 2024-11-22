@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>500 - Internal Server Error</title>
+</head>
+
+<body>
+    <header>
+        <!-- Navbar -->
+        <%- include('partials/navbar', { page: '' }) %>
+    </header>
+
+    <main>
+        <div class="container mx-auto">
+            <!-- Hero Section for 500 Page -->
+            <div class="hero min-h-screen bg-base-200">
+                <div class="hero-content text-center">
+                    <div class="max-w-md">
+                        <h1 class="text-6xl font-bold text-red-500">500</h1> 
+                        <p class="py-6"><%= message || "Oops! Something went wrong on our end." %></p>
+                        <img src="https://cdn.dribbble.com/users/1078347/screenshots/2799566/oops.png" alt="500 Error Image" class="mx-auto rounded-lg">
+                        <div class="mt-6">
+                            <a href="/" class="btn btn-primary">Go Home</a> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

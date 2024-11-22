@@ -57,8 +57,8 @@
               
               <td>
                 <%= set.name %> | 
-                <a href="/lego/sets?theme=<%= encodeURIComponent(set.theme) %>" class="btn btn-xs btn-primary mt-2">
-                  <%= set.theme %>
+                <a href="/lego/sets?theme=<%= encodeURIComponent(set.Theme.name) %>" class="btn btn-xs btn-primary mt-2">
+                  <%= set.Theme.name %>
                 </a>
               </td>
               
@@ -69,6 +69,8 @@
             <td><%= set.num_parts %></td>
             <td>
               <a href="/lego/sets/<%= set.set_num %>" class="btn btn-xs">details</a>
+              <a href="/lego/editSet/<%= set.set_num %>" class="btn btn-success btn-xs">Edit</a>
+
             </td>
           </tr>
           <% }) %>
