@@ -1,4 +1,5 @@
 require('dotenv').config(); // Load environment variables
+require('pg');
 const Sequelize = require('sequelize'); // Import Sequelize
 
 // Set up Sequelize to point to our Postgres database
