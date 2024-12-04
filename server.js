@@ -37,12 +37,13 @@ const legoSets = require('./modules/legoSets');
 app.get('/lego/addSet', (req, res) => {
   legoSets.getAllThemes()
     .then((themes) => {
-      res.render('addSet', { themes }); 
+      res.render('addSet', { themes, page: '/lego/addSet' }); // Pass the page variable
     })
     .catch((err) => {
       res.render('500', { message: `Error fetching themes: ${err.message}` });
     });
 });
+
 
 //Post Route for addSet
 app.post('/lego/addSet', (req, res) => {
