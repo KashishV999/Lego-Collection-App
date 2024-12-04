@@ -9,9 +9,8 @@ Welcome to the **Lego Collection App**—the ultimate tool for Lego fans to orga
 - **Database-Driven**: **PostgreSQL** powers the backend, keeping your data safe and easy to manage. 🗂️
 
 ## Technologies Used 🛠️
-- **Frontend**: Built with **React** for a smooth and interactive user experience.
-- **Styling**: **Tailwind CSS** for an eye-catching, responsive design.
 - **Backend**: Powered by **Node.js** and **Express**.
+- **Styling**: **Tailwind CSS** for an eye-catching, responsive design.
 - **Database**: Leveraging **PostgreSQL** with **Sequelize ORM** for efficient data management.
 - **Deployment**: Hosted on **Vercel**, ensuring lightning-fast performance.
 
