@@ -1,26 +1,42 @@
-# Lego Collection App 🧩✨
+# 🧩 Lego Collection App
 
-Welcome to the **Lego Collection App**—the ultimate tool for Lego fans to organize, track, and explore their Lego sets! Whether you're a collector, builder, or Lego enthusiast, this app lets you easily manage your Lego collection in one place. 🚀
+Welcome to the **Lego Collection App** — the ultimate toolkit for Lego fans to explore, organize, and track their beloved sets. Whether you're a builder, collector, or enthusiast, this app helps you keep your Lego world beautifully in order. 🚀
 
-## Features 🚀
-- **Discover Sets**: Explore sets organized by themes—because every Lego fan needs their own catalog. 🏰🚗
-- **Add New Sets**: Keep your collection up-to-date with a simple add feature. 📦
-- **Fully Responsive Design**: Built with **Tailwind CSS**, ensuring the app looks great on any device—mobile or desktop. 📱💻
-- **Database-Driven**: **PostgreSQL** powers the backend, keeping your data safe and easy to manage. 🗂️
+---
 
-## Technologies Used 🛠️
-- **Backend**: Powered by **Node.js** and **Express**.
-- **Styling**: **Tailwind CSS** for an eye-catching, responsive design.
-- **Database**: Leveraging **PostgreSQL** with **Sequelize ORM** for efficient data management.
-- **Deployment**: Hosted on **Vercel**, ensuring lightning-fast performance.
+## 🌟 Features
 
-## See it Live 🌐
-Curious to try it out? Visit the live app here:
-[Live Demo](https://web322-lovat.vercel.app/)
+- 🔍 **Discover Sets** – Browse through sets categorized by popular themes like Technic, Castle, and more.
+- ➕ **Add New Sets** – Easily update your growing collection with a click.
+- 📝 **Edit & Delete** – Modify or remove sets anytime with built-in CRUD features.
+- 🎨 **Filter by Theme** – Quickly find sets grouped by theme.
+- 📱 **Responsive UI** – Built with **Tailwind CSS** to look stunning on all devices.
+- 🗃️ **Database-Driven** – Uses **PostgreSQL** for storing and managing data reliably.
 
-## Getting Started 🏁
+---
 
-### 1. Clone the repository:
+## 🛠️ Tech Stack
+
+| Layer        | Technology                 |
+|--------------|-----------------------------|
+| Backend      | Node.js, Express.js         |
+| Frontend     | EJS (Embedded JavaScript)   |
+| Styling      | Tailwind CSS                |
+| Database     | PostgreSQL + Sequelize ORM  |
+| Deployment   | Vercel                      |
+
+---
+
+## 🌐 Live Demo
+
+Check out the live version here:  
+🔗 [Lego Collection App on Vercel](https://web322-lovat.vercel.app/)
+
+---
+
+## 🏁 Getting Started
+
+### 🔧 1. Clone the Repository
 
 ```bash
 git clone https://github.com/KashishV999/Lego-Collection-App.git
