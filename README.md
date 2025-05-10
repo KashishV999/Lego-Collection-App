@@ -40,7 +40,7 @@ Check out the live version here:
 
 ```bash
 git clone https://github.com/KashishV999/Lego-Collection-App.git
-cd Lego-Collection-App
+cd Lego-Collection-App```
 
 ### 🔧 2. Intall Dependencies
 ```bash
