@@ -37,40 +37,38 @@ Check out the live version here:
 ## 🏁 Getting Started
 
 ### 🔧 1. Clone the Repository
-
 ```bash
 git clone https://github.com/KashishV999/Lego-Collection-App.git
-cd Lego-Collection-App```
+cd Lego-Collection-App
+🔧 2. Install Dependencies
 
-### 🔧 2. Intall Dependencies
-```bash
+bash
 npm install
+🔧 3. Set Up Environment Variables
 
-### 🔧 3.  Set Up Environment Variables
-```bash
+Create a .env file with:
+
+bash
 DB_HOST=your_database_host
 DB_USER=your_database_user
 DB_PASSWORD=your_database_password
 DB_NAME=your_database_name
+🔧 4. Run the App Locally
 
-### 🔧 4. Run the App Locally
-```bash
+bash
 npm start
+🖼️ Screenshots
 
-## 🏁 Screenshots
+(Add images using Markdown syntax: ![Description](path/to/image.png))
 
-## 5 🚀 Deployment on Vercel
+🚀 Deployment on Vercel
 
-This project is hosted on Vercel.
-
-To deploy your own:
-
-Fork or clone the repository
+Fork/clone this repository
 Push to your GitHub account
-Link your repo on vercel.com
-Add your environment variables in the Vercel dashboard
-Done! 🚀
+Connect repo on Vercel
+Add environment variables in Vercel's dashboard
+Deploy! 🚀
+🙏 Acknowledgements
 
-##Acknowledgements
-Huge thanks to the Lego community for the inspiration 💛
+Huge thanks to the Lego community for inspiration 💛
 Built with ❤️ by @KashishV999
