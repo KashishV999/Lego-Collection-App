@@ -11,18 +11,18 @@
   "author": "Kashish Verma",
   "license": "ISC",
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.15",
-    "daisyui": "^4.12.13",
-    "dotenv": "^16.4.5",
+    "@tailwindcss/typography": "^0.5.16",
+    "daisyui": "^4.12.24",
+    "dotenv": "^16.5.0",
     "ejs": "^3.1.10",
-    "express": "^4.21.0",
-    "pg": "^8.13.1",
+    "express": "^4.21.2",
+    "pg": "^8.15.6",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.37.5"
+    "sequelize": "^6.37.7"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.13"
+    "tailwindcss": "^3.4.17"
   }
 }

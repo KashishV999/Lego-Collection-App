@@ -1,6 +1,14 @@
-require('dotenv').config(); // Load environment variables
+require('dotenv').config({ path: '/Users/kashish/Documents/Projects/Lego-Collection-App/.env' });// Load environment variables
 require('pg');
 const Sequelize = require('sequelize'); // Import Sequelize
+
+
+console.log({
+  PGHOST: process.env.PGHOST,
+  PGDATABASE: process.env.PGDATABASE,
+  PGUSER: process.env.PGUSER,
+  PGPASSWORD: process.env.PGPASSWORD,
+});
 
 // Set up Sequelize to point to our Postgres database
 const sequelize = new Sequelize(
@@ -14,6 +22,7 @@ const sequelize = new Sequelize(
     dialectOptions: {
       ssl: { rejectUnauthorized: false }, 
     },
+    logging: console.log, // Enable detailed logging
   }
 );
 

@@ -1,33 +1,90 @@
-<div class="navbar bg-base-100">
-    <div class="flex-1">
-        <a href="/" class="btn btn-ghost normal-case text-3xl font-bold">Lego Collection</a>
-    </div>
+<nav class="sticky top-0 z-50 bg-gradient-to-r from-amber-50 to-amber-100 shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <!-- Logo/Brand -->
+      <div class="flex items-center">
+        <a href="/" class="flex items-center space-x-2 text-amber-600 hover:text-amber-700 transition-colors duration-200">
+          <!-- Optional: Add a small Lego icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 6c0-1.1.9-2 2-2h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V6zm6 0c0-1.1.9-2 2-2h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2h-2c-1.1 0-2-.9-2-2V6zm6 0c0-1.1.9-2 2-2h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2h-2c-1.1 0-2-.9-2-2V6zm-12 6c0-1.1.9-2 2-2h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2v-2zm6 0c0-1.1.9-2 2-2h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2h-2c-1.1 0-2-.9-2-2v-2zm6 0c0-1.1.9-2 2-2h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2h-2c-1.1 0-2-.9-2-2v-2z" />
+          </svg>
+          <span class="text-2xl font-bold tracking-tight">Lego Collection</span>
+        </a>
+      </div>
 
-    <!-- Regular Navbar Links -->
-    <div class="navbar-center hidden sm:flex">
-        <ul class="menu menu-horizontal px-1">
-            <li><a class="<%= (page === '/') ? 'active' : '' %>" href="/">Home</a></li>
-            <li><a class="<%= (page === '/lego/addSet') ? 'active' : '' %>" href="/lego/addSet">Add to Collection</a></li>
-            <li><a class="<%= (page === '/lego/sets') ? 'active' : '' %>" href="/lego/sets">View Collection</a></li>
-            <li><a class="<%= (page === '/about') ? 'active' : '' %>" href="/about">About</a></li>
-        </ul>
-    </div>
+      <!-- Desktop Navigation -->
+      <div class="hidden sm:flex sm:items-center">
+        <div class="flex space-x-1">
+          <a href="/" 
+             class="px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 
+                    <%= (page === '/') ? 'text-amber-800 bg-amber-200' : 'text-gray-700 hover:bg-amber-100 hover:text-amber-700' %>"
+             aria-current="<%= (page === '/') ? 'page' : 'false' %>">
+            Home
+          </a>
+          <a href="/lego/addSet" 
+             class="px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 
+                    <%= (page === '/lego/addSet') ? 'text-amber-800 bg-amber-200' : 'text-gray-700 hover:bg-amber-100 hover:text-amber-700' %>"
+             aria-current="<%= (page === '/lego/addSet') ? 'page' : 'false' %>">
+            Add to Collection
+          </a>
+          <a href="/lego/sets" 
+             class="px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 
+                    <%= (page === '/lego/sets') ? 'text-amber-800 bg-amber-200' : 'text-gray-700 hover:bg-amber-100 hover:text-amber-700' %>"
+             aria-current="<%= (page === '/lego/sets') ? 'page' : 'false' %>">
+            View Collection
+          </a>
+          <a href="/about" 
+             class="px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 
+                    <%= (page === '/about') ? 'text-amber-800 bg-amber-200' : 'text-gray-700 hover:bg-amber-100 hover:text-amber-700' %>"
+             aria-current="<%= (page === '/about') ? 'page' : 'false' %>">
+            About
+          </a>
+        </div>
+      </div>
 
-    <!-- Responsive Navbar Links in a Dropdown -->
-    <div class="dropdown sm:hidden">
-        <label tabindex="0" class="btn btn-ghost">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-        </label>
-        <ul tabindex="0" class="menu menu-sm dropdown-content right-0 mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-            <li><a class="<%= (page === '/') ? 'active' : '' %>" href="/">Home</a></li>
-            <li><a class="<%= (page === '/lego/addSet') ? 'active' : '' %>" href="/lego/addSet">Add to Collection</a></li>
-            <li><a class="<%= (page === '/lego/sets') ? 'active' : '' %>" href="/lego/sets">View Collection</a></li>
-            <li><a class="<%= (page === '/about') ? 'active' : '' %>" href="/about">About</a></li>
-            
-            
-            
-        </ul>
+      <!-- Mobile Navigation Button -->
+      <div class="flex items-center sm:hidden">
+        <button type="button" 
+                class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-amber-600 hover:bg-amber-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-amber-500"
+                aria-expanded="false"
+                aria-controls="mobile-menu">
+          <span class="sr-only">Open main menu</span>
+          <!-- Icon when menu is closed -->
+          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
     </div>
-</div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="sm:hidden" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      <a href="/" 
+         class="block px-3 py-2 rounded-md text-base font-medium transition-all duration-200 
+                <%= (page === '/') ? 'text-amber-800 bg-amber-200' : 'text-gray-700 hover:bg-amber-100 hover:text-amber-700' %>"
+         aria-current="<%= (page === '/') ? 'page' : 'false' %>">
+        Home
+      </a>
+      <a href="/lego/addSet" 
+         class="block px-3 py-2 rounded-md text-base font-medium transition-all duration-200 
+                <%= (page === '/lego/addSet') ? 'text-amber-800 bg-amber-200' : 'text-gray-700 hover:bg-amber-100 hover:text-amber-700' %>"
+         aria-current="<%= (page === '/lego/addSet') ? 'page' : 'false' %>">
+        Add to Collection
+      </a>
+      <a href="/lego/sets" 
+         class="block px-3 py-2 rounded-md text-base font-medium transition-all duration-200 
+                <%= (page === '/lego/sets') ? 'text-amber-800 bg-amber-200' : 'text-gray-700 hover:bg-amber-100 hover:text-amber-700' %>"
+         aria-current="<%= (page === '/lego/sets') ? 'page' : 'false' %>">
+        View Collection
+      </a>
+      <a href="/about" 
+         class="block px-3 py-2 rounded-md text-base font-medium transition-all duration-200 
+                <%= (page === '/about') ? 'text-amber-800 bg-amber-200' : 'text-gray-700 hover:bg-amber-100 hover:text-amber-700' %>"
+         aria-current="<%= (page === '/about') ? 'page' : 'false' %>">
+        About
+      </a>
+    </div>
+  </div>
+</nav>

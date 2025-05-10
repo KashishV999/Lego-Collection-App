@@ -4,65 +4,146 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lego Set Details</title>
-  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/main.css">
+  <title>Lego Set Details: <%= set.name %></title>
 
   <script>
-document.addEventListener("DOMContentLoaded", async () => {
-  try {
-    let response = await fetch("http://api.quotable.io/random");
-    let data = await response.json();
+    document.addEventListener("DOMContentLoaded", async () => {
+      try {
+        let response = await fetch("http://api.quotable.io/random");
+        let data = await response.json();
 
-    document.getElementById("quote").innerHTML = `"${data.content}"<br />- <em>${data.author}</em>`;
-  } catch (error) {
-    console.error("Failed to fetch quote:", error);
-    document.getElementById("quote").innerHTML = "Quote unavailable at the moment.";
-  }
-});
-
+        document.getElementById("quote").innerHTML = `"${data.content}"<br />- <em>${data.author}</em>`;
+      } catch (error) {
+        console.error("Failed to fetch quote:", error);
+        document.getElementById("quote").innerHTML = "Quote unavailable at the moment.";
+      }
+    });
   </script>
-  
-  
 </head>
 
-<body>
+<body class="bg-amber-50 min-h-screen">
 
   <!-- Navbar -->
   <%- include('partials/navbar', { page: "" }) %>
 
-  <!-- Hero Section with Empty Header and Paragraph -->
-  <div class="hero bg-base-200 rounded-lg p-6">
-    <div class="hero-content text-center">
-      <div class="max-w-md">
-        <h1 class="text-5xl font-bold"><%= set.name %></h1>
-        <p class="py-6">Below, you will find detailed information about the set: <%= set.name %></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="container mx-auto p-4">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <!-- Set Image -->
-      <div>
-        <img class="w-60 h-60 rounded-lg bg-transparent bg-no-repeat bg-cover" src="<%= set.img_url %>" alt="<%= set.name %> Image" />
-      </div>
-
-      <!-- Set Details -->
-      <div class="prose">
-        <p>
-          <span class="font-bold">Set Name: </span> <%= set.name %><br />
-          <span class="font-bold">Year Released: </span> <%= set.year %><br />
-          <span class="font-bold">Theme: </span> <%= set.Theme.name %><br />
-          <span class="font-bold">Number of Parts: </span> <%= set.num_parts %><br /><br />
-
-          <!-- Dynamic Quote -->
-          <span id="quote"></span>
-          <br /><br />
-          <a class="btn btn-primary btn-sm" href="#" onclick="history.back(); return false;">RETURN</a>
+  <!-- Hero Section -->
+  <div class="container mx-auto px-4 py-8">
+    <div class="bg-gradient-to-r from-amber-400 to-yellow-300 rounded-xl p-8 shadow-lg mb-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-sm"><%= set.name %></h1>
+        <p class="text-lg text-white/90 max-w-2xl mx-auto">
+          Below, you will find detailed information about this Lego set
         </p>
       </div>
     </div>
+
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+      <div class="md:flex">
+        <!-- Set Image -->
+        <div class="md:w-1/2 bg-amber-100 p-6 flex items-center justify-center">
+          <img src="<%= set.img_url %>" alt="<%= set.name %> Image" class="max-w-full h-auto rounded-lg shadow-md hover:scale-105 transition-transform duration-300" />
+        </div>
+
+        <!-- Set Details -->
+        <div class="md:w-1/2 p-8">
+          <div class="space-y-4">
+            <div>
+              <h2 class="text-sm font-medium text-amber-600">Set Name</h2>
+              <p class="text-xl font-semibold text-gray-900"><%= set.name %></p>
+            </div>
+            
+            <div>
+              <h2 class="text-sm font-medium text-amber-600">Year Released</h2>
+              <p class="text-xl font-semibold text-gray-900"><%= set.year %></p>
+            </div>
+            
+            <div>
+              <h2 class="text-sm font-medium text-amber-600">Theme</h2>
+              <p class="text-xl font-semibold text-gray-900"><%= set.Theme.name %></p>
+            </div>
+            
+            <div>
+              <h2 class="text-sm font-medium text-amber-600">Number of Parts</h2>
+              <p class="text-xl font-semibold text-gray-900"><%= set.num_parts %></p>
+            </div>
+            
+            <div class="pt-4 border-t border-gray-200">
+              <h2 class="text-sm font-medium text-amber-600">Quote of the Day</h2>
+              <p id="quote" class="mt-2 italic text-gray-600">Loading quote...</p>
+            </div>
+            
+            <div class="pt-6 flex space-x-4">
+              <a href="#" onclick="history.back(); return false;" class="inline-flex items-center px-4 py-2 border border-amber-300 rounded-md shadow-sm text-sm font-medium text-amber-700 bg-white hover:bg-amber-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="-ml-1 mr-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                </svg>
+                Return
+              </a>
+              <a href="/lego/editSet/<%= set.set_num %>" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-amber-600 hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="-ml-1 mr-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+                </svg>
+                Edit Set
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <!-- Related Sets Section -->
+  <div class="container mx-auto px-4 py-8">
+    <h2 class="text-2xl font-bold text-amber-800 mb-6">Related Sets</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- This would be populated with actual related sets -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <div class="h-48 bg-amber-100 flex items-center justify-center">
+          <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://cdn.rebrickable.com/media/sets/placeholder.jpg');"></div>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-gray-900 mb-2">Related Set</h3>
+          <p class="text-sm text-gray-600">Same theme as <%= set.name %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-amber-800 text-white py-12 mt-16">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Lego Collection</h3>
+          <p class="text-amber-200">
+            Explore our extensive collection of Lego sets from various themes and years.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="/" class="text-amber-200 hover:text-white transition-colors">Home</a></li>
+            <li><a href="/lego/sets" class="text-amber-200 hover:text-white transition-colors">View Collection</a></li>
+            <li><a href="/lego/addSet" class="text-amber-200 hover:text-white transition-colors">Add to Collection</a></li>
+            <li><a href="/about" class="text-amber-200 hover:text-white transition-colors">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Contact</h3>
+          <p class="text-amber-200">
+            Have questions about our collection? Feel free to reach out!
+          </p>
+          <a href="mailto:info@legocollection.com" class="inline-block mt-2 text-white hover:text-amber-200 transition-colors">
+            info@legocollection.com
+          </a>
+        </div>
+      </div>
+      <div class="border-t border-amber-700 mt-8 pt-8 text-center text-amber-200">
+        <p>© <%= new Date().getFullYear() %> Lego Collection. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>

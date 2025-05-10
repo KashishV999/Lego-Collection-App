@@ -4,79 +4,141 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/main.css">
   <title>Lego Collection</title>
-  <link rel="stylesheet" href="/css/main.css" />
 </head>
 
-<body>
+<body class="bg-amber-50 min-h-screen">
 
   <!-- Navbar -->
   <%- include('partials/navbar', { page: '/lego/sets' }) %>
 
   <!-- Page Content -->
-  <div class="container mx-auto p-4">
+  <div class="container mx-auto px-4 py-8">
     <!-- Header -->
-    <div class="container mx-auto p-4">
-
-        <div class="hero bg-base-200 rounded-lg p-6">
-          <div class="hero-content text-center ">
-            <div class="max-w-md">
-              <h1 class="text-5xl font-bold">Collection</h1>
-    
-              <p class="py-6">Browse the entire collection.  Click the theme to filter by themes such as: <a href="/lego/sets?theme=Technic" class="btn btn-primary btn-xs">Technic</a> <a href="/lego/sets?theme=Lion Knights" class="btn btn-primary btn-xs">Lion Knights</a>  <a href="/lego/sets?theme=Books" class="btn btn-primary btn-xs">Books</a> </p>
-    
-            </div>
-          </div>
-        </div>
-    <br />
-
-    <!-- Table for Lego Sets -->
-    <div class="overflow-x-auto overflow-y-hidden">
-      <table class="table table-zebra w-full">
-        <thead>
-          <tr>
-            <th>Image</th>
-            <th>Name</th>
-         
-            <th>Year</th>
-            <th>Parts</th>
-            <th>Details</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% sets.forEach(set => { %>
-          <tr>
-            <td>
-                <div class="avatar">
-                    <div
-                      class="w-32 h-32 rounded-lg bg-transparent bg-no-repeat bg-cover"
-                      style="background-image: url('<%= set.img_url %>'); background-size: cover;">
-                    </div>
-                  </div>
-              </td>
-              
-              <td>
-                <%= set.name %> | 
-                <a href="/lego/sets?theme=<%= encodeURIComponent(set.Theme.name) %>" class="btn btn-xs btn-primary mt-2">
-                  <%= set.Theme.name %>
-                </a>
-              </td>
-              
-
-            <td><%= set.name %></td>
-           
-            <td><%= set.year %></td>
-            <td><%= set.num_parts %></td>
-            <td>
-              <a href="/lego/sets/<%= set.set_num %>" class="btn btn-xs">details</a>
-              <a href="/lego/editSet/<%= set.set_num %>" class="btn btn-success btn-xs">Edit</a>
-
-            </td>
-          </tr>
-          <% }) %>
-        </tbody>
-      </table>
+<!-- Header -->
+<div class="relative overflow-hidden bg-gradient-to-r from-amber-400 to-yellow-300 py-16 md:py-24">
+  <div class="absolute inset-0 opacity-20">
+    <div class="absolute inset-0" style="background-image: url('https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80'); background-size: cover; background-position: center;"></div>
+  </div>
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-md" role="heading" aria-level="1">Collection</h1>
+      <p class="text-xl md:text-2xl text-white mb-8 drop-shadow">
+        Browse the entire collection. Click the theme to filter by themes such as:
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 mt-6">
+        <a href="/lego/sets?theme=Video%20Games%20and%20Accessories" 
+           class="bg-amber-500 hover:bg-amber-600 text-white font-medium px-4 py-2 rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
+           aria-label="Filter by Technic theme">
+          Video Games
+        </a>
+        <a href="/lego/sets?theme=Lion%20Knights" 
+           class="bg-amber-500 hover:bg-amber-600 text-white font-medium px-4 py-2 rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
+           aria-label="Filter by Lion Knights theme">
+          Lion Knights
+        </a>
+        <a href="/lego/sets?theme=Supplemental" 
+           class="bg-amber-500 hover:bg-amber-600 text-white font-medium px-4 py-2 rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
+           aria-label="Filter by Books theme">
+          Supplemental
+        </a>
+      </div>
     </div>
   </div>
+</div>
+
+
+      
+
+    <!-- Table for Lego Sets -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="min-w-full divide-y divide-amber-200">
+          <thead class="bg-amber-100">
+            <tr>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-amber-800 uppercase tracking-wider">Image</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-amber-800 uppercase tracking-wider">Name</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-amber-800 uppercase tracking-wider">Year</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-amber-800 uppercase tracking-wider">Parts</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-amber-800 uppercase tracking-wider">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-amber-100">
+            <% sets.forEach(set => { %>
+            <tr class="hover:bg-amber-50 transition-colors duration-150">
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="h-16 w-16 rounded-md overflow-hidden bg-amber-100">
+                  <div class="h-full w-full bg-cover bg-center" style="background-image: url('<%= set.img_url %>');"></div>
+                </div>
+              </td>
+              <td class="px-6 py-4">
+                <div class="text-sm font-medium text-gray-900"><%= set.name %></div>
+                <div class="text-sm text-gray-500">
+                  <a href="/lego/sets?theme=<%= encodeURIComponent(set.Theme.name) %>" class="text-amber-600 hover:text-amber-800 hover:underline">
+                    <%= set.Theme.name %>
+                  </a>
+                </div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= set.year %></td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= set.num_parts %></td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                <div class="flex space-x-2">
+                  <a href="/lego/sets/<%= set.set_num %>" class="text-amber-600 hover:text-amber-900 bg-amber-100 hover:bg-amber-200 px-3 py-1 rounded-md transition-colors duration-200">View</a>
+                  <a href="/lego/editSet/<%= set.set_num %>" class="text-blue-600 hover:text-blue-900 bg-blue-100 hover:bg-blue-200 px-3 py-1 rounded-md transition-colors duration-200">Edit</a>
+                </div>
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+   
+
+
+     
+  
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-amber-800 text-white py-12 mt-16">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Lego Collection</h3>
+          <p class="text-amber-200">
+            Explore our extensive collection of Lego sets from various themes and years.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="/" class="text-amber-200 hover:text-white transition-colors">Home</a></li>
+            <li><a href="/lego/sets" class="text-amber-200 hover:text-white transition-colors">View Collection</a></li>
+            <li><a href="/lego/addSet" class="text-amber-200 hover:text-white transition-colors">Add to Collection</a></li>
+            <li><a href="/about" class="text-amber-200 hover:text-white transition-colors">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Contact</h3>
+          <p class="text-amber-200">
+            Have questions about our collection? Feel free to reach out!
+          </p>
+          <a href="mailto:info@legocollection.com" class="inline-block mt-2 text-white hover:text-amber-200 transition-colors">
+            info@legocollection.com
+          </a>
+        </div>
+      </div>
+      <div class="border-t border-amber-700 mt-8 pt-8 text-center text-amber-200">
+        <p>© <%= new Date().getFullYear() %> Lego Collection. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 </body>
+
 </html>

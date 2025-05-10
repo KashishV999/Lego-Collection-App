@@ -8,90 +8,130 @@
   <title>Add Lego Set</title>
 </head>
 
-<body tabindex="-1">
-
-  
-
+<body class="bg-amber-50 min-h-screen">
 
   <!-- Navbar -->
   <%- include('partials/navbar', { page: '/lego/addSet' }) %>
 
-
   <!-- Hero Section -->
-  <div class="container mx-auto p-6">
-    <div class="hero bg-base-200 rounded-lg p-6 shadow-md">
-      <div class="hero-content text-center">
-        <div class="max-w-md">
-          <h1 class="text-5xl font-bold text-primary">Add a New Lego Set</h1>
-          <p class="py-6 text-gray-600">Fill out the form below to add a new Lego set to the collection.</p>
-        </div>
+  <div class="relative overflow-hidden bg-gradient-to-r from-amber-400 to-yellow-300 py-16 md:py-24">
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute inset-0" style="background-image: url('https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80'); background-size: cover; background-position: center;"></div>
+    </div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-md">Add a New Lego Set</h1>
+        <p class="text-xl md:text-2xl text-white mb-8 drop-shadow">
+          Fill out the form below to add a new Lego set to your collection.
+        </p>
       </div>
     </div>
   </div>
 
   <!-- Form Section -->
-  <div class="container mx-auto p-6">
-    <form action="/lego/addSet" method="POST" class="bg-white p-6 rounded-lg shadow-md">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Set Number -->
-        <div class="mb-6">
-          <label for="set_num" class="block text-gray-700 font-medium">Set Number</label>
-          <input type="text" id="set_num" name="set_num" required
-            class="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-300"
-            placeholder="e.g., 1234">
+  <div class="container mx-auto px-4 py-16">
+    <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-6 md:p-8 border border-amber-100">
+      <form action="/lego/addSet" method="POST">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Set Number -->
+          <div class="space-y-2">
+            <label for="set_num" class="block text-amber-800 font-medium">Set Number</label>
+            <input type="text" id="set_num" name="set_num" required 
+                   class="w-full px-4 py-3 rounded-lg border border-amber-200 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-200"
+                   placeholder="e.g., 1234"
+                   aria-describedby="set_num_help">
+            <p id="set_num_help" class="text-xs text-gray-500">Enter the official Lego set number</p>
+          </div>
+
+          <!-- Name -->
+          <div class="space-y-2">
+            <label for="name" class="block text-amber-800 font-medium">Name</label>
+            <input type="text" id="name" name="name" required 
+                   class="w-full px-4 py-3 rounded-lg border border-amber-200 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-200"
+                   placeholder="e.g., Master Mechanic">
+          </div>
+
+          <!-- Year -->
+          <div class="space-y-2">
+            <label for="year" class="block text-amber-800 font-medium">Year</label>
+            <input type="number" id="year" name="year" required min="1950" max="2024" 
+                   class="w-full px-4 py-3 rounded-lg border border-amber-200 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-200"
+                   placeholder="e.g., 2022">
+          </div>
+
+          <!-- Number of Parts -->
+          <div class="space-y-2">
+            <label for="num_parts" class="block text-amber-800 font-medium">Number of Parts</label>
+            <input type="number" id="num_parts" name="num_parts" required min="1" 
+                   class="w-full px-4 py-3 rounded-lg border border-amber-200 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-200"
+                   placeholder="e.g., 1500">
+          </div>
+
+          <!-- Image URL -->
+          <div class="space-y-2">
+            <label for="img_url" class="block text-amber-800 font-medium">Image URL</label>
+            <input type="url" id="img_url" name="img_url" required 
+                   class="w-full px-4 py-3 rounded-lg border border-amber-200 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-200"
+                   placeholder="e.g., https://example.com/image.jpg">
+          </div>
+
+          <!-- Theme -->
+          <div class="space-y-2">
+            <label for="theme_id" class="block text-amber-800 font-medium">Theme</label>
+            <select id="theme_id" name="theme_id" required 
+                    class="w-full px-4 py-3 rounded-lg border border-amber-200 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-200 bg-white">
+              <% themes.forEach(theme => { %>
+              <option value="<%= theme.id %>"><%= theme.name %></option>
+              <% }) %>
+            </select>
+          </div>
         </div>
 
-        <!-- Name -->
-        <div class="mb-6">
-          <label for="name" class="block text-gray-700 font-medium">Name</label>
-          <input type="text" id="name" name="name" required
-            class="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-300"
-            placeholder="e.g., Master Mechanic">
+        <!-- Submit Button -->
+        <div class="mt-8">
+          <button type="submit" 
+                  class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-opacity-50 shadow-md hover:shadow-lg">
+            Add Lego Set
+          </button>
         </div>
-
-        <!-- Year -->
-        <div class="mb-6">
-          <label for="year" class="block text-gray-700 font-medium">Year</label>
-          <input type="number" id="year" name="year" required min="1950" max="2024"
-            class="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-300"
-            placeholder="e.g., 2022">
-        </div>
-
-        <!-- Number of Parts -->
-        <div class="mb-6">
-          <label for="num_parts" class="block text-gray-700 font-medium">Number of Parts</label>
-          <input type="number" id="num_parts" name="num_parts" required min="1"
-            class="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-300"
-            placeholder="e.g., 1500">
-        </div>
-
-        <!-- Image URL -->
-        <div class="mb-6">
-          <label for="img_url" class="block text-gray-700 font-medium">Image URL</label>
-          <input type="url" id="img_url" name="img_url" required
-            class="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-300"
-            placeholder="e.g., https://example.com/image.jpg">
-        </div>
-
-        <!-- Theme -->
-        <div class="mb-6">
-          <label for="theme_id" class="block text-gray-700 font-medium">Theme</label>
-          <select id="theme_id" name="theme_id" required
-            class="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-300">
-            <% themes.forEach(theme => { %>
-            <option value="<%= theme.id %>"><%= theme.name %></option>
-            <% }) %>
-          </select>
-        </div>
-      </div>
-
-      <!-- Submit Button -->
-      <div class="mt-6">
-        <button type="submit" class="btn btn-primary w-full">Add Lego Set</button>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
 
+  <!-- Footer -->
+  <footer class="bg-amber-800 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Lego Collection</h3>
+          <p class="text-amber-200">
+            Explore our extensive collection of Lego sets from various themes and years.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="/" class="text-amber-200 hover:text-white transition-colors">Home</a></li>
+            <li><a href="/lego/sets" class="text-amber-200 hover:text-white transition-colors">View Collection</a></li>
+            <li><a href="/lego/addSet" class="text-amber-200 hover:text-white transition-colors">Add to Collection</a></li>
+            <li><a href="/about" class="text-amber-200 hover:text-white transition-colors">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Contact</h3>
+          <p class="text-amber-200">
+            Have questions about our collection? Feel free to reach out!
+          </p>
+          <a href="mailto:info@legocollection.com" class="inline-block mt-2 text-white hover:text-amber-200 transition-colors">
+            info@legocollection.com
+          </a>
+        </div>
+      </div>
+      <div class="border-t border-amber-700 mt-8 pt-8 text-center text-amber-200">
+        <p>© <%= new Date().getFullYear() %> Lego Collection. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>
