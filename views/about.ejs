@@ -4,46 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <title>About</title>
 </head>
 <body>
     <!-- Navbar -->
     <%- include('partials/navbar', { page: '/about' }) %>
 
-
     <!-- Main Content -->
     <div class="container mx-auto mt-12">
         <!-- Hero Section -->
-<!-- Header -->
-<div class="relative overflow-hidden bg-gradient-to-r from-amber-400 to-yellow-300 py-16 md:py-24">
-  <div class="absolute inset-0 opacity-20">
-    <div class="absolute inset-0" style="background-image: url('https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80'); background-size: cover; background-position: center;"></div>
-  </div>
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="max-w-3xl mx-auto text-center">
-      <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-md">About</h1>
-      <p class="text-xl md:text-2xl text-white mb-8 drop-shadow">
-        Learn more about me and my journey.
-      </p>
-    </div>
-  </div>
-</div>
+        <div class="relative overflow-hidden bg-gradient-to-r from-amber-400 to-yellow-300 py-16 md:py-24">
+            <div class="absolute inset-0 opacity-20">
+                <div class="absolute inset-0" style="background-image: url('https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80'); background-size: cover; background-position: center;"></div>
+            </div>
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-md">About</h1>
+                    <p class="text-xl md:text-2xl text-white mb-8 drop-shadow">
+                        Learn more about me and my journey.
+                    </p>
+                    <!-- Social Media Links -->
+                    <div class="flex justify-center space-x-4">
+                        <a href="https://www.linkedin.com/in/kashish-verma-b57b052a6/" target="_blank" rel="noopener noreferrer" 
+                           class="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-200">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/KashishV999" target="_blank" rel="noopener noreferrer" 
+                           class="bg-gray-800 hover:bg-gray-900 text-white flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-200">
+                            <i class="fab fa-github text-xl"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-      
+        <!-- About Section -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
             <!-- Left Column (Image) -->
             <div class="flex justify-center">
-                <img class="w-68 rounded-lg" src="https://www.elifnotes.com/wp-content/uploads/2021/03/benefits-of-reading-fiction.webp" alt="Hiking in nature" />
+                <img class="w-68 rounded-lg shadow-lg" src="https://www.elifnotes.com/wp-content/uploads/2021/03/benefits-of-reading-fiction.webp" alt="Hiking in nature" />
             </div>
 
-          
+            <!-- Right Column (About Me) -->
             <div class="p-6">
-                <h2 class="text-2xl font-bold">A Little About Me</h2>
+                <h2 class="text-2xl font-bold text-amber-800">A Little About Me</h2>
                 <p class="mt-4 text-gray-700 leading-relaxed">
                     Hi, I'm passionate about coding, design, and creativity. Currently, I am taking courses in web development and programming.
                     Outside of studies, I enjoy reading books, painting, and experimenting with new tech. Always eager to learn and grow in both personal 
                     and professional spaces!
                 </p>
+                
             </div>
         </div>
     </div>
