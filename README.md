@@ -63,10 +63,6 @@ DB_NAME = your_database_name
 npm start
 ```
 
-##  Screenshots
-
-(Add images using Markdown syntax: ![Description](path/to/image.png))
-
 ##  Deployment on Vercel
 
 Fork/clone this repository
